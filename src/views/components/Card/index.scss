@@ -1,0 +1,62 @@
+.card {
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-size: 100%;
+    background-image: url("/daria.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 2;
+  }
+
+  &__title {
+    position: relative;
+    width: fit-content;
+    font-size: 180px;
+    line-height: 1;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  & .text-rows {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &__transparent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    -webkit-text-stroke: 2px rgb(188, 65, 204);
+
+    & > span:first-of-type {
+      z-index: 2;
+    }
+
+    & > span:not(first-of-type) {
+      z-index: 4;
+    }
+  }
+
+  &__colored {
+    width: fit-content;
+    text-shadow: -1px 0px 12px rgba(202, 61, 210, 0.89);
+
+    & > span:last-of-type {
+      z-index: 3;
+    }
+  }
+}
